@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap.min.css"
+    />
+    <title>Daftar Wakif</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="text-center mb-4">Daftar Donatur / Wakif Mushola Al Hidayah</h3>
+      <a href="https://s.id/musholaSDNTrengguno" class="btn btn-primary">+ Wakaf/Donasi</a>
+      <br><br>
+      <table id="example" class="table table-striped table-bordered" style="width:100%"></table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#example").DataTable({
+          ajax: "https://script.google.com/macros/s/AKfycbx-7GOwQpYfaY0j2eMUWe9w9DFPeRUv0-aTAP2kttlxzmuEo1afmXeefr0NibhOjSSXRQ/exec",
+          columns: [
+            { title: "NO", data: "no" },
+            { title: "Kelas", data: "kelas" },
+            { title: "NAMA", data: "nama" },
+            { title: "NIS", data: "nis" },
+            { title: "Status Verifikasi", data: "verifikasi" },
+          ],
+        });
+
+        // Refresh data setiap 30 detik
+        setInterval(function () {
+          $('#example').DataTable().ajax.reload();
+        }, 30000);
+      });
+    </script>
+  </body>
+</html>
