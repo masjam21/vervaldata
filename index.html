@@ -91,19 +91,28 @@
 
 			/* Tabel Styling */
 			.table th {
-				background: linear-gradient(135deg, #118a06, #4dd256);
+				background: #09d5cf;
 				color: white;
-				text-align: center;
-				vertical-align: middle;
+				text-align: center !important; /* Teks akan diatur di tengah secara horizontal */
+				vertical-align: middle !important; /* Teks diatur di tengah secara vertikal */
+				padding: 10px; /* Opsional: Beri padding untuk estetika */
+				font-weight: bold; /* Opsional: Tegaskan teks untuk header */
 			}
-
 			.table-striped tbody tr:nth-of-type(odd) {
-				background-color: #e9f3fc;
+				background-color: #ad63de !important; /* Warna baris ganjil */
 			}
 
 			.table-striped tbody tr:nth-of-type(even) {
-				background-color: #fdfdfd;
+				background-color: #2be2e2 !important ; /* Warna baris genap */
 			}
+
+			/* .table-striped tbody tr:nth-of-type(odd) {
+				background-color: #ad63de;
+			}
+
+			.table-striped tbody tr:nth-of-type(even) {
+				background-color: #2be2e2;
+			} */
 
 			.table-striped tbody tr:hover {
 				background-color: #d0ebff;
@@ -150,7 +159,7 @@
 			<div class="container">
 				<!-- Chart Progress -->
 				<div class="chart-container">
-<!-- 					<h5 class="mb-3">Progress Verifikasi Data</h5> -->
+					<!-- <h5 class="mb-3">Progress Verifikasi Data</h5> -->
 					<iframe
 						class="progress-chart"
 						seamless
